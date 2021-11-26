@@ -2,7 +2,8 @@ import readlineSync from 'readline-sync';
 import {
   welcome,
   result,
-  check
+  check,
+  randomNumber
 } from '../src/index.js'
 
 const gcd = (firstNum, secondNum) => {
@@ -28,11 +29,11 @@ const brainGcd = () => {
   let count = 0;
   let flag = true
   while (count < 3 && flag) {
-    const rndNumberFirst = Math.floor(Math.random() * 100)
-    const rndNumberSecond = Math.floor(Math.random() * 100)
+    const rndNumFirst = randomNumber()
+    const rndNumSecond = randomNumber()
     const answer = gcd(rndNumberFirst, rndNumberSecond).toString()
-    const userAnswer = readlineSync.question(`Question: ${rndNumberFirst}` +
-      ` ${rndNumberSecond} `);
+    const userAnswer = readlineSync.question(`Question: ${rndNumFirst}` +
+      ` ${rndNumSecond} `);
 
     flag = check(answer, userAnswer)
     count += 1

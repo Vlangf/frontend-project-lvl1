@@ -24,3 +24,12 @@ export const check = (answer, userAnswer) => {
     return false
   };
 }
+
+export const answerDict = {
+  true: 'yes',
+  false: 'no'
+}
+
+export const randomNumber = () => {
+  return Math.floor(Math.random() * 101)
+}

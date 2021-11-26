@@ -2,7 +2,8 @@ import readlineSync from 'readline-sync';
 import {
   welcome,
   result,
-  check
+  check,
+  randomNumber
 } from '../src/index.js'
 
 const brainCalc = () => {
@@ -12,12 +13,11 @@ const brainCalc = () => {
 
   const mathSym = ['+', '*', '-']
   const rndMathSym = mathSym[Math.floor(Math.random() * mathSym.length)]
-  const rndNumber = () => Math.floor(Math.random() * 101)
 
   let count = 0;
   let flag = true
   while (count < 3 && flag) {
-    const rndExpression = `${rndNumber()}  ${rndMathSym} ${rndNumber()}`
+    const rndExpression = `${randomNumber()}  ${rndMathSym} ${randomNumber()}`
     const answer = eval(rndExpression).toString()
     const userAnswer = readlineSync.question(`Question: ${rndExpression} `);
 

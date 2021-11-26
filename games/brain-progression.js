@@ -2,12 +2,13 @@ import readlineSync from 'readline-sync';
 import {
   welcome,
   result,
-  check
+  check,
+  randomNumber
 } from '../src/index.js'
 
 const rndProgression = () => {
   const progressPeriod = Math.floor(Math.random() * 10)
-  let progression = [Math.floor(Math.random() * 50)]
+  let progression = [randomNumber()]
   for (let i = Math.floor(Math.random() * 5); i < 10; i += 1) {
     progression.push(progression[progression.length - 1] + progressPeriod)
   }
