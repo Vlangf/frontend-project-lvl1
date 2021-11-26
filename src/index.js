@@ -1,13 +1,28 @@
 import readlineSync from 'readline-sync';
 
-export const welcome = () => {
+
+const start = (game) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  return name
-}
 
-export const result = (name, flag) => {
+  console.log(game.description)
+  let countGames = 0;
+  let flag = true
+  while (countGames < 3 && flag) {
+    const { question, answer } = game.game()
+    const userAnswer = readlineSync.question(`Question: ${question} `);
+    if (answer === userAnswer) {
+      console.log('Correct!')
+      flag = true
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
+      flag = false
+      break
+    }
+    countGames += 1
+  };
+
   if (flag) {
     console.log(`Congratulations, ${name}!`)
   } else {
@@ -15,22 +30,4 @@ export const result = (name, flag) => {
   }
 }
 
-export const check = (answer, userAnswer) => {
-  if (answer === userAnswer) {
-    console.log('Correct!')
-    return true
-  } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
-    return false
-  };
-}
-
-export const answerDict = {
-  true: 'yes',
-  false: 'no'
-}
-
-export const randomNumber = () => {
-  // return random number from 0 to 100
-  return Math.floor(Math.random() * 101)
-}
+export default start

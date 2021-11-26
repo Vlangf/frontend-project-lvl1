@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import brainGcd from '../games/brain-gcd.js'
+import brainGcd from '../src/games/brain-gcd.js'
+import start from '../src/index.js'
 
-brainGcd()
+start(brainGcd)
