@@ -28,8 +28,8 @@ const brainGcd = () => {
   let count = 0;
   let flag = true
   while (count < 3 && flag) {
-    const rndNumberFirst = Math.floor(Math.random() * 30)
-    const rndNumberSecond = Math.floor(Math.random() * 30)
+    const rndNumberFirst = Math.floor(Math.random() * 100)
+    const rndNumberSecond = Math.floor(Math.random() * 100)
     const answer = gcd(rndNumberFirst, rndNumberSecond).toString()
     const userAnswer = readlineSync.question(`Question: ${rndNumberFirst}` +
       ` ${rndNumberSecond} `);
