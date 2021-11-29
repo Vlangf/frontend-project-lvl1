@@ -1,15 +1,28 @@
-import { randomNumber } from '../const.js'
+import { randomNumber } from '../randomNumber.js'
 
 
 const description = 'What is the result of the expression?'
-const game = () => {
+const makeGameData = () => {
+  let answer = ''
   const mathSym = ['+', '*', '-']
-  const rndMathSym = mathSym[Math.floor(Math.random() * mathSym.length)]
-  const question = `${randomNumber()} ${rndMathSym} ${randomNumber()}`
-  const answer = eval(question).toString()
+  const firstNum = randomNumber(50)
+  const secondNum = randomNumber(50)
+  const rndMathSym = mathSym[randomNumber(mathSym.length)]
+  const question = `${firstNum} ${rndMathSym} ${secondNum}`
+  switch (rndMathSym) {
+    case '+':
+      answer = (firstNum + secondNum).toString()
+      break
+    case '-':
+      answer = (firstNum - secondNum).toString()
+      break
+    case '*':
+      answer = (firstNum * secondNum).toString()
+      break
+  }
 
-  return { question, answer }
+  return { question, answer}
 
 }
 
-export default { description, game }
+export default { description, makeGameData }

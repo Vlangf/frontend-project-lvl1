@@ -1,18 +1,18 @@
-import { randomNumber } from '../const.js'
+import { randomNumber } from '../randomNumber.js'
 
 const rndProgression = () => {
-  const progressPeriod = Math.floor(Math.random() * 10)
+  const progressPeriod = randomNumber(10)
   let progression = [randomNumber()]
-  for (let i = Math.floor(Math.random() * 5); i < 10; i += 1) {
+  for (let i = randomNumber(5); i < 10; i += 1) {
     progression.push(progression[progression.length - 1] + progressPeriod)
   }
   return progression
 }
 
 const description = 'What number is missing in the progression?'
-const game = () => {
+const makeGameData = () => {
     const progression = rndProgression()
-    const answerIndex = Math.floor(Math.random() * progression.length)
+    const answerIndex = randomNumber(progression.length)
     const answer = progression[answerIndex].toString()
     progression[answerIndex] = '..'
     const question = `${progression.join(' ')}`
@@ -21,4 +21,4 @@ const game = () => {
 
   }
 
-  export default { description, game }
+  export default { description, makeGameData }

@@ -1,4 +1,4 @@
-import { randomNumber } from '../const.js'
+import { randomNumber } from '../randomNumber.js'
 
 const gcd = (firstNum, secondNum) => {
   let commonDel = 1
@@ -17,7 +17,7 @@ const gcd = (firstNum, secondNum) => {
 }
 
 const description = 'Find the greatest common divisor of given numbers.'
-const game = () => {
+const makeGameData = () => {
     const rndNumFirst = randomNumber()
     const rndNumSecond = randomNumber()
     const answer = gcd(rndNumFirst, rndNumSecond).toString()
@@ -27,4 +27,4 @@ const game = () => {
 
   }
 
-export default { description, game }
+export default { description, makeGameData }

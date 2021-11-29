@@ -8,22 +8,19 @@ const start = (game) => {
 
   console.log(game.description)
   let countGames = 0;
-  let flag = true
-  while (countGames < 3 && flag) {
-    const { question, answer } = game.game()
+  while (countGames < 3) {
+    const { question, answer } = game.makeGameData()
     const userAnswer = readlineSync.question(`Question: ${question} `)
     if (answer === userAnswer) {
       console.log('Correct!')
-      flag = true
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`)
-      flag = false
       break
     }
     countGames += 1
   };
 
-  if (flag) {
+  if (countGames === 3) {
     console.log(`Congratulations, ${name}!`)
   } else {
     console.log(`Let's try again, ${name}!`)
