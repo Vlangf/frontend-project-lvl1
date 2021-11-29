@@ -2,8 +2,8 @@ import readlineSync from 'readline-sync';
 
 
 const start = (game) => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
+  console.log('Welcome to the Brain Games!')
+  const name = readlineSync.question('May I have your name? ')
   console.log(`Hello, ${name}!`);
 
   console.log(game.description)
@@ -11,12 +11,12 @@ const start = (game) => {
   let flag = true
   while (countGames < 3 && flag) {
     const { question, answer } = game.game()
-    const userAnswer = readlineSync.question(`Question: ${question} `);
+    const userAnswer = readlineSync.question(`Question: ${question} `)
     if (answer === userAnswer) {
       console.log('Correct!')
       flag = true
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`)
       flag = false
       break
     }
