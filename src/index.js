@@ -10,7 +10,8 @@ const start = (game) => {
   let countGames = 0;
   while (countGames < 3) {
     const { question, answer } = game.makeGameData()
-    const userAnswer = readlineSync.question(`Question: ${question} `)
+    console.log(`Question: ${question} `)
+    const userAnswer = readlineSync.question('Your answer: ')
     if (answer === userAnswer) {
       console.log('Correct!')
     } else {

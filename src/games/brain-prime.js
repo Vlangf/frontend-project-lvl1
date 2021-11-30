@@ -13,7 +13,7 @@ const isPrime = (num) => {
 }
 
 const description = '"yes" if given number is prime. Otherwise answer "no"'
-const game = () => {
+const makeGameData = () => {
 
     const question = randomNumber()
     const answer = isPrime(question) ? 'yes' : 'no'
@@ -22,4 +22,4 @@ const game = () => {
 
   }
 
-export default { description, game }
+export default { description, makeGameData }
