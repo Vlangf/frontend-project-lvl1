@@ -1,5 +1,5 @@
 const randomNumber = (endNumber=101) => {
-  // return random number from 0 to 100
+  // return random number
   return Math.floor(Math.random() * (endNumber));
 };
 
