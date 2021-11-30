@@ -10,18 +10,18 @@ const makeGameData = () => {
   const question = `${firstNum} ${rndMathSym} ${secondNum}`;
   switch (rndMathSym) {
     case '+':
-      answer = (firstNum + secondNum).toString()
-      break
+      answer = (firstNum + secondNum).toString();
+      break;
     case '-':
-      answer = (firstNum - secondNum).toString()
-      break
+      answer = (firstNum - secondNum).toString();
+      break;
     case '*':
-      answer = (firstNum * secondNum).toString()
-      break
+      answer = (firstNum * secondNum).toString();
+      break;
     default:
-      answer = (firstNum * secondNum).toString()
-  };
-  return { question, answer }
-}
+      answer = (firstNum * secondNum).toString();
+  }
+  return { question, answer };
+};
 
-export default { description, makeGameData }
+export default { description, makeGameData };

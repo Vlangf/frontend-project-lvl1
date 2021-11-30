@@ -1,30 +1,28 @@
-import { randomNumber } from '../randomNumber.js'
+import { randomNumber } from '../randomNumber.js';
 
 const gcd = (firstNum, secondNum) => {
-  let commonDel = 1
+  let commonDel = 1;
   if (firstNum > secondNum) {
-    commonDel = secondNum
+    commonDel = secondNum;
   } else {
-    commonDel = firstNum
+    commonDel = firstNum;
   }
   while (true) {
     if (firstNum % commonDel === 0 && secondNum % commonDel === 0) {
-      return commonDel
+      return commonDel;
     } else {
-      commonDel -= 1
+      commonDel -= 1;
     }
   }
-}
+};
 
-const description = 'Find the greatest common divisor of given numbers.'
+const description = 'Find the greatest common divisor of given numbers.';
 const makeGameData = () => {
-    const rndNumFirst = randomNumber()
-    const rndNumSecond = randomNumber()
-    const answer = gcd(rndNumFirst, rndNumSecond).toString()
-    const question = `${rndNumFirst} ${rndNumSecond}`
+  const rndNumFirst = randomNumber();
+  const rndNumSecond = randomNumber();
+  const answer = gcd(rndNumFirst, rndNumSecond).toString();
+  const question = `${rndNumFirst} ${rndNumSecond}`;
+  return { question, answer };
+};
 
-    return { question, answer }
-
-  }
-
-export default { description, makeGameData }
+export default { description, makeGameData };

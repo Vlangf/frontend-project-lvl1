@@ -1,4 +1,6 @@
-export const randomNumber = (endNumber=101) => {
+const randomNumber = (endNumber=101) => {
   // return random number from 0 to 100
-  return Math.floor(Math.random() * (endNumber))
-}
+  return Math.floor(Math.random() * (endNumber));
+};
+
+export default randomNumber;
