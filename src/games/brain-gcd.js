@@ -1,4 +1,4 @@
-import { randomNumber } from '../randomNumber.js';
+import randomNumber from '../randomNumber.js';
 
 const gcd = (firstNum, secondNum) => {
   let commonDel = 1;

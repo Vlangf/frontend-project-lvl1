@@ -1,4 +1,4 @@
-import { randomNumber } from '../randomNumber.js';
+import randomNumber from '../randomNumber.js';
 
 const rndProgression = () => {
   const progressPeriod = randomNumber(10);
