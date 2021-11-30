@@ -1,6 +1,6 @@
 import { randomNumber } from '../randomNumber.js'
 
-export const description = 'Answer "yes" if the number is even, otherwise answer "no"'
+export const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 export const makeGameData = () => {
   const question = randomNumber()
