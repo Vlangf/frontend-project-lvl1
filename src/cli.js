@@ -5,4 +5,4 @@ const sayHello = () => {
   console.log(`Hello, ${name}!`);
 };
 
-export default sayHello
+export default sayHello;

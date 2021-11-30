@@ -18,7 +18,7 @@ const start = (game) => {
       break;
     }
     countGames += 1;
-  };
+  }
 
   if (countGames === 3) {
     console.log(`Congratulations, ${name}!`);

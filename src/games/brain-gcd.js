@@ -7,13 +7,14 @@ const gcd = (firstNum, secondNum) => {
   } else {
     commonDel = firstNum;
   }
-  while (true) {
+  while (commonDel > 0) {
     if (firstNum % commonDel === 0 && secondNum % commonDel === 0) {
-      return commonDel;
+      break;
     } else {
       commonDel -= 1;
     }
   }
+  return commonDel;
 };
 
 const description = 'Find the greatest common divisor of given numbers.';
