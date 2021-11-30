@@ -2,12 +2,12 @@ import randomNumber from '../randomNumber.js';
 
 const rndProgression = () => {
   const progressPeriod = randomNumber(10);
-  let progression = [randomNumber()];
+  const progression = [randomNumber()];
   for (let i = randomNumber(5); i < 10; i += 1) {
     progression.push(progression[progression.length - 1] + progressPeriod);
   }
   return progression;
-}
+};
 
 const description = 'What number is missing in the progression?';
 const makeGameData = () => {
